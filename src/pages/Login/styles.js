@@ -1,15 +1,16 @@
 import styled from 'styled-components/native';
 //Adicionar background de imagem
-export const Background = styled.KeyboardAvoidingView`
+export const Background = styled.View`
     flex: 1;
-    flex-direction: column;
     background-color: #FAD38B;
-    align-items: center;
-    align-items: center;
  `;
-//Modificar no código
 
-//Modificar tamanhos
+export const Container = styled.KeyboardAvoidingView`
+    flex:1;
+    align-items: center;
+    justify-content: center;
+ `;
+
 export const Logo = styled.Image`
     align-items: center;
     justify-content: center;
@@ -27,10 +28,10 @@ export const Input = styled.TextInput.attrs({
 })`
     background: rgba(255,255,255,1);
     width: 90%;
-    font-size: 17px;
+    font-size: 15px;
     color: #000;
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 7px;
 `;
 
@@ -41,26 +42,29 @@ export const SubmitText = styled.Text`
 
 export const Link = styled.TouchableOpacity`
     margin-top: 5px;
-    margin-bottom: 9px;
+    margin-bottom: 5px;
 `;
 
 export const LinkText = styled.Text`
     color: #583B3F;
+    font-size: 15px;
 `;
 
 export const BtnLogin = styled.TouchableOpacity`
     background-color: #583B3F;
-    padding: 5px;
+    padding: 13px;
     border-radius: 5px;
     width: 90%;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 `;
 
 export const ImgBackground = styled.ImageBackground`
-    align-items: center;
-    justify-content: center;
-    width: 700px;
-    height: 844px;
-    flex: 1;
+   flex: 1;
+   justify-content: center;
+   align-items: center;
+   width: 500px;
+   height: 900px;
+   opacity: 0.35;
 `;

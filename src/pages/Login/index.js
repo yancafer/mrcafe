@@ -1,40 +1,38 @@
 import React, { useState } from 'react';
-import { View, Text, StatusBar, SafeAreaView,ImageBackground , Image, TextInput, TouchableOpacity } from 'react-native';
-import {AreaInput, Background,
+import { StatusBar, View, StyleSheet, ImageBackground } from 'react-native';
+import {
+  AreaInput, Background,
   BtnLogin,
+  Container,
   Input,
   ImgBackground,
   SubmitText,
   Link,
   LinkText,
-  Logo} from './styles';
+  Logo
+} from './styles';
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
 
   return (
-    
     <Background>
-      <ImgBackground
-      source={require('../../assets/background.png')}
-      />
-      <StatusBar backgroundColor="#000" barStyle="light-content" />
-
+      <Container
+        behavior={Platform.OS === 'ios' ? 'padding' : ''}
+        enabled
+      >
         <Logo
           source={require('../../assets/mrcafe-logo.png')}
         />
         <AreaInput>
-        <Input
-          placeholder='E-mail'
-        />
+          <Input
+            placeholder='E-mail'
+          />
         </AreaInput>
 
         <AreaInput>
-        <Input
-          placeholder='Senha'
-        />
+          <Input
+            placeholder='Senha'
+          />
         </AreaInput>
 
         <BtnLogin>
@@ -43,10 +41,9 @@ export default function SignIn() {
 
         <Link>
           <LinkText>Não possui conta ainda? Criar conta!</LinkText>
-          <LinkText>Sign up</LinkText>
         </Link>
 
- 
+      </Container>
     </Background>
-  )
+  );
 }

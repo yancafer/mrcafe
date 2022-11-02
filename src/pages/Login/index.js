@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { StatusBar, View, StyleSheet, ImageBackground } from 'react-native';
 import {
   AreaInput, Background,
   BtnLogin,
   Container,
   Input,
-  ImgBackground,
   SubmitText,
   Link,
   LinkText,
-  Logo
+  Logo,
+  TouchableOpacity
 } from './styles';
+import {Feather} from '@expo/vector-icons';
 
-export default function SignIn() {
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <Background>
@@ -26,12 +28,16 @@ export default function SignIn() {
         <AreaInput>
           <Input
             placeholder='E-mail'
+            value={email}
+            oneChangeText={value => setEmail(value)}
           />
         </AreaInput>
 
         <AreaInput>
           <Input
             placeholder='Senha'
+            value={password}
+            oneChangeText={value => setPassword(value)}
           />
         </AreaInput>
 

@@ -59,12 +59,3 @@ export const BtnLogin = styled.TouchableOpacity`
     align-items: center;
     margin-bottom: 25px;
 `;
-
-export const ImgBackground = styled.ImageBackground`
-   flex: 1;
-   justify-content: center;
-   align-items: center;
-   width: 500px;
-   height: 900px;
-   opacity: 0.35;
-`;

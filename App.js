@@ -1,21 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SignIn from './src/pages/Login';
+import { StatusBar } from 'expo-status-bar';
+import { colors } from './src/styles/colors';
+import Login from './src/pages/Login';
+import { useFonts, IMFellEnglishSC_400Regular } from '@expo-google-fonts/im-fell-english-sc'
+import AppLoading from 'expo-app-loading';
 
 console.disableYellowBox=true;
 
-const Stack = createNativeStackNavigator();
+export default function App() {
 
-function App() {
+    let [fontsLoaded] = useFonts({
+      IMFellEnglishSC_400Regular,
+    });
+
+    if (!fontsLoaded) {
+      return null;
+    }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={SignIn} options={{headerShown: false}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+    <StatusBar
+    barStyle="light-content"
+    />
+    <Login/>
+    </>
   );
-}
-
-export default App;
+};
